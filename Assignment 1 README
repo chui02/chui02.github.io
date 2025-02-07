@@ -22,3 +22,7 @@ Problem 4: I looked around on LeetCode's website on the discussion page to see w
 First I thought okay, I'll make a list exist first then work from there. I'll count how many elements exist, then single out the element that needs to be removed. Actually implementing it was kind of a nightmare to work.
 I then ran into the problem of something just bricking my program when I did multiple prints for test cases like in problems 1-3, so I just made it user input as a workaround.
 This is definitely really inefficient but at least it works, and I have less of a headache.
+
+Problem 5: I made the same ListNode for managing linked lists to begin with from problem 4. I'll do the same merging lists together, then sort then out. I mostly pulled a lot from problem 4 in converting a linked list to a Python list in order to print out results.
+I probably could've imported some libraries but I'm not s ure if that's actually allowed(?) so I just made a regular user input for lists. Had to make some extra work so it could read mutliple lists like (1 2 3) (4 5 6), taking out the whitespaces.
+Then I just merge stuff into a linked list, convert that to Python list, and print out said list for the user. Also included a check for if lists are empty.
