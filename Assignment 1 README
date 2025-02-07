@@ -8,7 +8,7 @@ I spent a bit of time looking up how to use Python dictionaries for quick search
 This should(?) be a more optimal solution than the nested loops I mentioned beforehand, but I'm not sure if I can further optimize it. Plus, I can return the indices more easily with fewer lines.
 
 Problem 2: Since I'm looking for a target number in an array, at the very start I made a check to see if the number even exists in the array at all. 
-This lets me quickly return an aswer without having to spend more time doing something. The first search is pretty basic and straightforward; just start searching from the beginning to the end. 
+This lets me quickly return an answer without having to spend more time doing something. The first search is pretty basic and straightforward; just start searching from the beginning to the end. 
 I spent some time trying to figure out how to find the ending position in the list. 
 Initially I thought up of instantly cutting to where the first number was found then search forward from there, adding the amount of numbers skipped to the found number position to correct it. 
 Then I remembered that I could actually reverse the list and search "forward", which seemed a lot less convoluted than my other idea. The "- 1" exists to correct the position of where a number is found since its reversed, otherwise it'd end up repeating the same number as the forward search.
@@ -18,4 +18,7 @@ Problem 3: I just merged both arrays and sorted them, then I calculated how many
 If it's even, the median is the average of the two middlemost numbers.
 This code is pretty simple, I'm not sure what else I could do to optimize it. I just stuck with merging both of the arrays since I didn't know how to properly implement other methods. Admittedly this will likely be worse with larger arrays it has to fully go through.
 
-Problem 4: 
+Problem 4: I looked around on LeetCode's website on the discussion page to see what other people were talking about. To be honest I had a hard time figuring out what to actually do for this problem.
+First I thought okay, I'll make a list exist first then work from there. I'll count how many elements exist, then single out the element that needs to be removed. Actually implementing it was kind of a nightmare to work.
+I then ran into the problem of something just bricking my program when I did multiple prints for test cases like in problems 1-3, so I just made it user input as a workaround.
+This is definitely really inefficient but at least it works, and I have less of a headache.
