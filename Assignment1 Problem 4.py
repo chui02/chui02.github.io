@@ -12,7 +12,7 @@ def removeNode(head: ListNode, n: int) -> ListNode:
         length += 1
         current = current.next
     
-    #If n is equal to the length, removes head
+    #If n is equal to the length, removes head (If input is 1, makes it empty)
     if n == length:
         return head.next
     
