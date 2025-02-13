@@ -16,7 +16,7 @@ def mergeLists(lists):
     if not nodes:
         return None
 
-    #Sorts values
+    #Sorts values in list
     nodes.sort()
 
     #Creates new linked list from sorted values
