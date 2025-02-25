@@ -1,0 +1,24 @@
+Assignment 2
+
+Problem 1: I initially experimented using the Boyer-Moore Voting Algorithm I learned about from a previous data algorithm class. Then it just became a simple adding to the coutn value for elements existing in an array.
+The time complexity shouldn't be much since it's just a single pass through the array of elements.
+
+Problem 2: For a given list I just sorted it by descending order (5, 4, 3, ect). It's in reversed order specifically because of how the example is laid out in the assignment page i.e.
+Example 1:
+Input: nums = [3,2,1,5,6,4], k = 2
+Output: 5
+Since 5 is the 2nd (kth) largest element, if I ordered it normally it'd end up being an output of 2.
+Then I just put in return k - 1 to account for Python lists starting at index 0. For time complexity this should just run at (O(n log n) because of the sorting.
+
+Problem 3: First I made the given array be sorted, then I iterate through the array to find the largest gap between elements, returning that as the output. i - 1 is in the range function to compare elements in different places.
+The time complexity should be (O(n log n) because of sorting.
+
+Problem 4: I started with a stack specifically because it easily lets me just append and pop elements. index is a dictionary to keep track if an element repeats, and the tracker is there to "mark" an element has having been used. 
+So all three of these things let me keep track of what element has been used, if it repeats, and stores it for an output. Fun fact: I learned what enumerate means through a video game boss.
+After that I just made a loop to check through a given string of elements, sorting it through alphabetically, then returning it as a result.
+
+Problem 5: Since I need to return a length of shortest non-empty subarrays, I make a "store" to hold arrays for later. Its a deque specifically in order to work with prefix sums. The "result" being infinity is because I need some kind of variable that won't end up being the same as an actual result as a placeholder, otherwise
+it'd actually break my program if both variables are the same so I just used inf there.
+I then make a list named p of length n + 1 which stores sums from the nums array. Then for each index of i in the prefix sum array I check the deque for a valid answer.
+Also included another check for if no subarrays then -1 is returned.
+Each element is processed once, and each index is pushed and popped at most once, so the time complexity is O(n).
