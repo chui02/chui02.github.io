@@ -5,4 +5,7 @@ I had a lot of problems making the actual sorting and ordering of the output wor
 Most of the stuff should just be O(n) time complexity, sorting arrays and going through them.
 I used https://www.geeksforgeeks.org/binary-search-tree-in-python/ to try to figure out how to implement binary search trees along with class slides.
 
-Problem 2: 
+Problem 2: Preorder and inorder arrays, turn them into a binary tree. First thing to do is take the root node of the subtree and once that is done, slicing the preorder list to move elements left of the root
+to the left subtree and right to the right subtree. I don't know how to use hash maps well on this so I just tried recursively adding stuff to the left and right side. It's slower on time complexity with up to about O(n^2),
+or usually just O(n). A FIFO queue for the root helps to append and pop elements in the queue for managing the tree. I'm not sure what else to do since that was the most familiar solution I could think of at the moment.
+https://www.geeksforgeeks.org/preorder-traversal-of-binary-tree/
