@@ -30,4 +30,7 @@ After it goes through all the nodes within the tree, I'll append those elements 
  5   3     9
 Visual for example 1, it'd go as 1, 3, 9. Take the numbers from each row, compare them, write in the largest value found.
 
-Problem 5:
+Problem 5: So based on the hints given in the appendix, make a BFS, track the maximum value on each level, store the results, return them.
+Alright so start with makign the traversal, have it loop through a given list which is made as a tree. The input is a BST so it should already be sorted, I just have to rebuild the BST in a balanced way. A queue system can append 
+the values I need to both left and right, so that should be able to cover it. Using the middlemost element should be able to minimize height differences between the subtrees on nodes.
+Time complexity is about O(n) because of inorder traversal + building the balanced binary tree.
