@@ -9,3 +9,12 @@ Problem 2: Preorder and inorder arrays, turn them into a binary tree. First thin
 to the left subtree and right to the right subtree. I don't know how to use hash maps well on this so I just tried recursively adding stuff to the left and right side. It's slower on time complexity with up to about O(n^2),
 or usually just O(n). A FIFO queue for the root helps to append and pop elements in the queue for managing the tree. I'm not sure what else to do since that was the most familiar solution I could think of at the moment.
 https://www.geeksforgeeks.org/preorder-traversal-of-binary-tree/
+
+Problem 3: So, a path in a binary tree has the node, the left, and the right branches. So how should I add stuff from each node, to make the final sum? I figured some way of looping could probably work since it's gonna be 
+going through elements to add. But I also need some way to deal with negative integers since example 2 has -10 in it. I figured that if I initially set the maximum sum to negative infinity which, technically, is smaller
+than any real number in python, lets me have the first comparison be replaces by a better sum path. This mostly came from troubleshooting an issue with negative integers giving my program trouble, and I found that online.
+It's also kinda funny to have negative infinity be a thing.
+leftMax and rightMax allow me to find the best sum path while also getting rid of negative elements. It returns the largest combination of two elements, since that's what I want for the optimal sum.
+I tried BFS first but that seemed to work less well, and I ended up writing too much to make it actually work in the first place. Depth first search did better since it returns the max sum from a path and it 
+lets me update the global max with the optimal path from the left and right nodes.
+This code runs in O(n) time because it visits each node exactly once. It’s fairly optimal since we have to look at each node at least once, and we avoid any repeated calculations.
