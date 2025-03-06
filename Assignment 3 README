@@ -18,3 +18,19 @@ leftMax and rightMax allow me to find the best sum path while also getting rid o
 I tried BFS first but that seemed to work less well, and I ended up writing too much to make it actually work in the first place. Depth first search did better since it returns the max sum from a path and it 
 lets me update the global max with the optimal path from the left and right nodes.
 This code runs in O(n) time because it visits each node exactly once. It’s fairly optimal since we have to look at each node at least once, and we avoid any repeated calculations.
+
+Problem 4: Given the root of a binary tree, return an array of the largest value in each row of the tree (0-indexed).
+So for returning an array, I could use a FIFO queue with the given root node to search through a tree. A BFS would probably be pretty good here sine it can go through the tree, then append to the array as it goes left and 
+right through the branches. More stuff to keep track of how many nodes exist within the queue, i.e. the size, dequeue the nodes while updating another variable with the max value found in thsoe rows.
+After it goes through all the nodes within the tree, I'll append those elements to another list to make a result then just return it.
+      1
+    /   \
+   3     2
+  / \     \
+ 5   3     9
+Visual for example 1, it'd go as 1, 3, 9. Take the numbers from each row, compare them, write in the largest value found.
+
+Problem 5: So based on the hints given in the appendix, make a BFS, track the maximum value on each level, store the results, return them.
+Alright so start with makign the traversal, have it loop through a given list which is made as a tree. The input is a BST so it should already be sorted, I just have to rebuild the BST in a balanced way. A queue system can append 
+the values I need to both left and right, so that should be able to cover it. Using the middlemost element should be able to minimize height differences between the subtrees on nodes.
+Time complexity is about O(n) because of inorder traversal + building the balanced binary tree.
