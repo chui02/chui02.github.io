@@ -1,3 +1,8 @@
 Assignment 4
 
-Problem 1: 
+Problem 1: Hashmap dictionary, nums, is made to count element frequencies inside the array while minheap stores the most frequent elements (Max size is set to x and if it gets exceeded the least frequent
+element gets popped from the stack)
+The most frequent element then gets returned from the minheap
+Time complexity should be O(n log k) since it counts elements, pushes and pops elements, and then returns a given list
+
+Problem 2: The array is sorted so binary search is used to find the insertion position of x, or the closest element, which helps narrow down the search space instead of scanning from the start.
