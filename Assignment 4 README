@@ -1,8 +1,17 @@
 Assignment 4
 
 Problem 1: Hashmap dictionary, nums, is made to count element frequencies inside the array while minheap stores the most frequent elements (Max size is set to x and if it gets exceeded the least frequent
-element gets popped from the stack)
+element gets popped from the stack).
 The most frequent element then gets returned from the minheap
-Time complexity should be O(n log k) since it counts elements, pushes and pops elements, and then returns a given list
+Time complexity should be O(n log k) since it counts elements, pushes and pops elements, and then returns a given list.
 
-Problem 2: The array is sorted so binary search is used to find the insertion position of x, or the closest element, which helps narrow down the search space instead of scanning from the start.
+Problem 2: The array is sorted so binary search is used to find the insertion position of x, or the closest element, which helps narrow down the search space instead of scanning everything from the start.
+I just imported the bisect function in Python since that seemed to do the function I needed already, then set up pointers that also prefer the smallest element found if some elements are equally close using absolute difference.
+After that I just return the list and print results.
+Time complexity varies around O(n) for doing the binary search, O(k) for pointers, and O(k log k) for sorting back a list as it is returned for a total of O(log n + k).
+
+Problem 3: Setting up an array w/ minHeap , I then just push the left (2*i + 1) and right (2*i + 2) children into the heap
+The max heap is set to negative because Python only has minHeap, making it negative swaps it around to pop the largest element.
+If I were to try it normally I'd only get the smallest element.
+The top k elements are then returned, stopping at that point.
+Time complexity is about O(k log k) because of extracting elements and moving them around.
