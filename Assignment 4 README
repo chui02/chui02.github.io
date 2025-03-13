@@ -15,3 +15,7 @@ The max heap is set to negative because Python only has minHeap, making it negat
 If I were to try it normally I'd only get the smallest element.
 The top k elements are then returned, stopping at that point.
 Time complexity is about O(k log k) because of extracting elements and moving them around.
+
+Problem 4: First, set up the prefix sum array prefix[i], in which prefix[i] = sum(nums[0] to nums[i-1]), then a deque is used to store prefix sums with increasing order to check for the shortest subarray.
+The loops run from 0 to n + 1 since the prefix array has an extra element at the beginning to represent empty arrays
+float('inf') essentially acts as a placeholder for a valid subarray to replace, and if no such array exists (i.e. [1, 2], 4) then -1 gets returned to handle such cases.
