@@ -10,7 +10,7 @@ I just imported the bisect function in Python since that seemed to do the functi
 After that I just return the list and print results.
 Time complexity varies around O(n) for doing the binary search, O(k) for pointers, and O(k log k) for sorting back a list as it is returned for a total of O(log n + k).
 
-Problem 3: Setting up an array w/ minHeap , I then just push the left (2*i + 1) and right (2*i + 2) children into the heap
+Problem 3: Setting up an array w/ minHeap , I then just push the left (2 * i + 1) and right (2 * i + 2) children into the heap
 The max heap is set to negative because Python only has minHeap, making it negative swaps it around to pop the largest element.
 If I were to try it normally I'd only get the smallest element.
 The top k elements are then returned, stopping at that point.
@@ -19,3 +19,8 @@ Time complexity is about O(k log k) because of extracting elements and moving th
 Problem 4: First, set up the prefix sum array prefix[i], in which prefix[i] = sum(nums[0] to nums[i-1]), then a deque is used to store prefix sums with increasing order to check for the shortest subarray.
 The loops run from 0 to n + 1 since the prefix array has an extra element at the beginning to represent empty arrays
 float('inf') essentially acts as a placeholder for a valid subarray to replace, and if no such array exists (i.e. [1, 2], 4) then -1 gets returned to handle such cases.
+Time complexity runs at about O(n) due to procesing elements in the deque and computing.
+
+Problem 5: A minHeap is used to push and pop elements to have the smallest fractions first, since the array is already ordered.The smallest fraction then gets popped
+until it gets to the given k fraction.
+Time complexity totals up to around O(n^2) but I think it can get slower depending on the inputs.
