@@ -1,0 +1,5 @@
+Assignment 5
+
+Problem 1: A BFS will be used to go through a given input.
+
+The time complexity is about O(2^n) depending on the size of the input.
