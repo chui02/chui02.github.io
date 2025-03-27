@@ -8,4 +8,15 @@ The time complexity is about O(2^n) depending on the size of the input.
 Problem 2: BST inorder traversal starts to get a sorted sequence of nodes, then each node gets compared to a previously visited node to check for differences.
 The float value in 'self.minimal' being set to inf makes it so any valid comparison will replace it, rather than me having to set a manual check.
 self.minimal is updated if a difference is smaller, and self.prev is updated to the current node's value to keep track.
-Time complexit is about O(N) since it does an inorder traversal of the BST, N represents how many nodes are being visited.
+Time complexity is about O(N) since it does an inorder traversal of the BST, N represents how many nodes are being visited.
+
+Problem 3: From the given hints, a bitmask is set up to represent given nodes. For a n-node graph the bitmask is an integer with n bits. If the i-th bit is set then the node i was visited.
+A BFS is then used to go through every node, using the tuples named (node, mask, dist) which expands by moving around given nodes. 
+Time complexity is about O(n * 2^n), for n * 2^n states.
+
+Problem 4: DFS traversal gets the maximum of each node on paths. Max gain gets computed by recursively finding the given max from the left and right sides of the tree, maxSum gets updated with this in turn.
+Negative infinity for the float exists because it guarantees that any valid path sum in the tree will be greater than the initial value. Any completed sum will replace negative infinity.
+Time complexit is about O(N) depending on how many nodes are visited from a given input, could also become O(log N).
+
+Problem 5: DFS is used to go from 1 to whatever the end of a given input is, recursively adds stuff through appending additional numbers. 
+Time complexity is about O(n) based on the input since each number is processed once.
