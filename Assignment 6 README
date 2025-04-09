@@ -1,0 +1,8 @@
+Assignment 6
+
+Problem 1: An adjacency list is used for nodes to know what's next to it, then a BFS is used to explore nodes, beginning with the source. Nodes are tracked as they are visited, and once
+the destination is reached True gets returned, with False otherwise if it doesn't
+Time complexity is about O(n + e), for the vertices and edges given and visited once each.
+Some stuff taken from here: https://www.geeksforgeeks.org/adjacency-list-in-python/
+
+Problem 2: 
