@@ -5,4 +5,14 @@ the destination is reached True gets returned, with False otherwise if it doesn'
 Time complexity is about O(n + e), for the vertices and edges given and visited once each.
 Some stuff taken from here: https://www.geeksforgeeks.org/adjacency-list-in-python/
 
-Problem 2: 
+Problem 2: A list is used to track which nodes have been visited, with DFS traversal going through nodes and paths.
+Depth map tracks positions of given nodes from the DFS to look at cycles and lengths. When a cycle gets detected its length is calculated using the depth difference.
+Time complexity is about O(n) for each node given. Nodes and edges are also visited once.
+
+Problem 3: Connectins are sorted by the cheapest cost with 'union' finding the most efficient ways to connect cities. Sorted connections get iterated through, if it finds any
+cities that aren't connected, they get connected and the cost gets added later on.
+Time complexity is O(E log E) for the number of connections.
+
+Problem 4: DFS is used to go through paths from node 0 to node n-1. It also tries any alternatives that may exist once each path has been looked at, done recursively.
+Once the final node is reached the path taken is saved to a list in case alternatives prove to be better.
+Time complexity is about O(2^n) since nodes can lead to multiple branches, kinda depends too much on that.
