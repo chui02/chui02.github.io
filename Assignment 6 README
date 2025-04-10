@@ -16,3 +16,9 @@ Time complexity is O(E log E) for the number of connections.
 Problem 4: DFS is used to go through paths from node 0 to node n-1. It also tries any alternatives that may exist once each path has been looked at, done recursively.
 Once the final node is reached the path taken is saved to a list in case alternatives prove to be better.
 Time complexity is about O(2^n) since nodes can lead to multiple branches, kinda depends too much on that.
+
+Problem 5: Basically, if n is 0, 1 gets returned. If n is negative, then x^-n = 1/x^n.
+x^n/2 gets recursively computed for either choice of:
+if n is even, squares it
+if n is odd, multiplies by x again
+Time complexity is O(n log n) with recursives.
