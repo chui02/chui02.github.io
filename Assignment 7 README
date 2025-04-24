@@ -1,0 +1,26 @@
+Assignment 7
+
+Problem 1: An adjacency list is made and DFS is used with states denoting if it has been visited or not (i.e. 0 (Not visisted yet), 1 (Currently on), 2 (Visited already)). 
+When we go into a node that's already marked as visited (i.e. 2), then that becomes a cycle. If the DFS checks can be completed without cycles then the courses can be finished.
+Time complexity is about O(N + E), for given number of courses (N) and prerequisites (E).
+
+Problem 2: A graph is built using an adjacency list from the times input, which uses a priority queue to always process the next closest node.
+The shortest time to reach each node gets tracked, and if any node cannot be reached from k, return -1.
+Time complexity is about O(E log N) since the heap operations would take log N, and each edge could be added onto the heap once.
+
+Problem 3: The price of wells will be treated as an edge from node 0 to house i, then we can add all well edges + all given pipe edges to a single list.
+We can sort the edges by cost and the NodeConnect class will be used to connect nodes, adding the cost if they're not already connected and continue until all houses are connected.
+Time complexity is about O(E log E) for the cases involving sorting like edges, and about O(α(n)) for the operation involving connecting the nodes at the end.
+
+Problem 4: I mostly just implemented the basic stuff like getting a ride, paying for it, and seeing which drivers were available ect.
+Basically: 
+For each ride request, we need to find available drivers near a user's pickup location. Though this is mostly simplified to just filter a list of all drivers and return the ones marked as available.
+For booking a ride + getting the driver, User provides a pickup and drop location, system assigns a nearby available driver, and then we create a Ride object, finally marking driver as unavailable.
+I don't really know how to implement tracking a driver's location so I just kinda gave up on it tbh.
+For cancelling a ride we just retrieve the ride by ID, update ride status to "Cancelled", and mark the driver as available now.
+Checking a ride history just brings up a list of previous info.
+For time complexity, depending on which part, it goes:
+Checking for nearby drivers: O(n)
+Getting a ride: O(1)
+Cancelling: O(1)
+Ride history: O(h)
