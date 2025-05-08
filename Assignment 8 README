@@ -22,8 +22,16 @@ Problem 4: A lot of the design features come from already existing popular media
 The basic outline contains:
 User model: A way to track followers, who you're following, posts, and messages.
 Post model: A likes system (to get trending and popular posts), timestamps, replies, mentions, and privacy options.
-Privacy: Hiding certain information/posts when generating the feed.
-Trending: sorted by likes.
-Mentions: extracted and stored (not fully used here but useful for tagging systems).
+Privacy: Hiding certain information/posts when generating the feed such as if an account only wants to post to followers, ect.
+Trending: Posts are considered trending upon reaching a certain threshold (could be a number of likes, how quickly it gets likes, ect) sorted by likes in order.
+Mentions: User mentions using the @ symbol are extracted and stored (not fully used here but useful for tagging systems).
 Direct messaging: A simple inbox with messages for personal communication.
 Threading: Replies to a post are grouped for ease of use.
+
+In order, time complexity ranges about:
+Following for user: O(1)
+Posting content: O(F) if pushing it out, O(1) if pulling it in
+Creating a user's feed: O(F log k)
+Liking and tagging/mentioning: O(1) or O(L) depending on action
+Getting trending posts: O(log k)
+Messaging between users: O(1) for sending, O(M) for reading
