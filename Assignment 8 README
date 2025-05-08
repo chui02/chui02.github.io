@@ -35,3 +35,5 @@ Creating a user's feed: O(F log k)
 Liking and tagging/mentioning: O(1) or O(L) depending on action
 Getting trending posts: O(log k)
 Messaging between users: O(1) for sending, O(M) for reading
+
+In the .py file for this problem I kinda just went with trying to implement basic function as an example, but it's very barebones by itself.
