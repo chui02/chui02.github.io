@@ -1,0 +1,37 @@
+Assignment 8
+Problem 1: An adjacency list is used to represent which courses depending on which prereq is needed.
+A degree array is used to track how many prerequisites each course has. Courses with degree == 0 are ready to be taken.
+BFS is used to repeatedly take courses from the queue, reduce the in-degree of dependent courses, and add new ones that can be taken to the queue. If the length of the resulting order is less than numCourses, a cycle exists, then returns an empty list.
+Time complexity is about O(V + E), for given V being the number of courses and E for the amount of prerequisites.
+
+Problem 2: So given two integers, being a dividend and a divisor
+It's checked if the result will be positive or negative since both dividend and divisor are converted to positive w/ absolute values for the purpose of calculating.
+After that, dividing is emulated by subtracting the divisor from the dividend as many times as possible before the value left over is less than the divisor, i.e. 8/2 = 4, so we can subtract 4 from 8, 2 times
+Bit shifting is used instead though to speed up the actual process as going through subtraction one by one takes too long.
+So instead, divisor << i means multiplying divisor by 2^i
+Time complexity is about O(log N) for N being a dividend since it doubles the divisor each time w/ shifts.
+
+Problem 3:
+Starting with dp[i], this represnets the minimum amount of coins that are needed to make the given amount i.
+A dp array is made with the size amount + 1  to account for the worst case being infinity, dp[0] = 0 is set as such for coins needed to make the amount 0
+Then for each given coin in coins, we can iterate each coin to the amount while updating dp[x] = min(dp[x], dp[x - coin] + 1).
+That way if dp[amount] is still amount + 1, return -1 (unreachable). Otherwise, returns dp[amount].
+Time complexity is about O(given amount * len(amount of coins)).
+
+Problem 4: A lot of the design features come from already existing popular media such as Twitter (or X but nobody calls it that), Facebook, Instagram, ect.
+The basic outline contains:
+User model: A way to track followers, who you're following, posts, and messages.
+Post model: A likes system (to get trending and popular posts), timestamps, replies, mentions, and privacy options.
+Privacy: Hiding certain information/posts when generating the feed such as if an account only wants to post to followers, ect.
+Trending: Posts are considered trending upon reaching a certain threshold (could be a number of likes, how quickly it gets likes, ect) sorted by likes in order.
+Mentions: User mentions using the @ symbol are extracted and stored (not fully used here but useful for tagging systems).
+Direct messaging: A simple inbox with messages for personal communication.
+Threading: Replies to a post are grouped for ease of use.
+
+In order, time complexity ranges about:
+Following for user: O(1)
+Posting content: O(F) if pushing it out, O(1) if pulling it in
+Creating a user's feed: O(F log k)
+Liking and tagging/mentioning: O(1) or O(L) depending on action
+Getting trending posts: O(log k)
+Messaging between users: O(1) for sending, O(M) for reading
