@@ -17,3 +17,13 @@ A dp array is made with the size amount + 1  to account for the worst case being
 Then for each given coin in coins, we can iterate each coin to the amount while updating dp[x] = min(dp[x], dp[x - coin] + 1).
 That way if dp[amount] is still amount + 1, return -1 (unreachable). Otherwise, returns dp[amount].
 Time complexity is about O(given amount * len(amount of coins)).
+
+Problem 4: A lot of the design features come from already existing popular media such as Twitter (or X but nobody calls it that), Facebook, Instagram, ect.
+The basic outline contains:
+User model: A way to track followers, who you're following, posts, and messages.
+Post model: A likes system (to get trending and popular posts), timestamps, replies, mentions, and privacy options.
+Privacy: Hiding certain information/posts when generating the feed.
+Trending: sorted by likes.
+Mentions: extracted and stored (not fully used here but useful for tagging systems).
+Direct messaging: A simple inbox with messages for personal communication.
+Threading: Replies to a post are grouped for ease of use.
